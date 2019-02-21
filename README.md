@@ -20,11 +20,11 @@ pipenv --3.7.2
 
 After setting up the python environment and pip environment the following packages ehich are used in the code need to be installed.
 
-'''
+~~~
 pipenv install re
 pipnev install PyPDF2
 pipenv install sqlite3
-'''
+~~~
 
 The above packages need not be installed in the pip environment you are working but should be available to import.
 
@@ -54,20 +54,20 @@ cs5293p19-project0/
 
 The structure is received initially from the repository created in the git. This repository can be brought into Ubuntu by cloning that repository. This can be done by using the following code
 
-'''
+~~~
 git clone "git repository link"
-'''
+~~~
 
 After that the Pipfile and Pipfile.lock will be created when piipenv is created. All other files are created in command line. 
 If any changes are made in the repository then they need to be pushed into git. The status of the git can be checked using the following code.
-'''
+~~~
 git status
-'''
+~~~
 
 When the above command is run, it shows all the files that are modified. These files need to be added, commited and then pushed into git. The following code is followed:
-'''
+~~~
 git add file-name
 git commit -m "Message to be displayed in git"
 git push origin master
-'''
+~~~
 
