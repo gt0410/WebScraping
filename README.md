@@ -159,7 +159,7 @@ The status() function prints to standard out, a random row from the database. Ea
 ers;
 ~~~
 
-## Running the tests
+### Running the tests
 
 The test files test the different features of the code. This will allow us to test if the code is working as expected. There are several testing frameworks for python, for this project use the
 py.test framework. For questions use the message board and see the pytest
@@ -171,5 +171,27 @@ Install the pytest in your current pipfile. You can install it using the command
 pipenv install pytest. To run test, you can use the command pipenv run
 python -m pytest. This will run pytest using the installed version of python.
 Alternatively, you can use the command pipenv run python setup.py test.
+
+Test cases are written for all the five functions. For the purpose of testing a url link is already given and the tests are written based on this url only. The test cases are written for each function.
+
+#### Testing Download url
+
+In this test case we are testing if the function fetchincidents() is downloading from the url and writing in the text file. After calling the function we are testing checking whether the file is none or not. This test case only checks whether the data is downloaded from the url but donot check if that is arrests url or not.
+
+#### Testing Extract Data
+
+In this test case we are testing the data extracted from the function extractincidents(). Since, I am converting the arrests data in to lists the tests are done to check if the length of the list is same as the number of observations and whether each observation is having eight fields to write into db.
+
+#### Testing Created db
+
+In this test case we are testing if the createdb() function is creating a database and also a table with name arrests. 
+
+#### Testing fields in db
+
+In this test we are checking if the extracted fields are saved exactly as we need or not. To check this we are giving a arrestee birthday and getiing the name of arrestee with that birth date. Tests are written to check the data type of thid name and to verify whether the name of the arrestee is same or not.
+
+#### Testing Status
+
+In this test case we are checkin if the status() function is returning string data type or not.
 
 
