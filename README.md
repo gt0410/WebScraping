@@ -11,10 +11,10 @@ The following instructions will help you to run the project.
 ### Prerequisites
 
 The project is done in python 3.7.2 version. Any version of python-3 will be sufficient to run the code. Also pip environment should be installed. Pyenv and pipenv can be created by using the folowong code in the project. Also a account in [github](https://github.com/) is necessary.
-'''
+~~~
 pyenv install python 3.7.2
 pipenv --3.7.2
-'''
+~~~
 
 ### Installing
 
