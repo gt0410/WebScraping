@@ -71,3 +71,90 @@ git commit -m "Message to be displayed in git"
 git push origin master
 ~~~
 
+### Functions description
+
+#### main.py
+
+The main function is written in main.py . Your code should take a url from the command line and perform each operation. After the code is installed, you should be able to run the code using the command below.
+
+~~~
+pipenv run python project0/main.py --arrests <url>
+~~~
+
+Using argparse the url given in the command line will be passed to main. All the functions defined in project0.py are imported in main.py.
+
+#### Download Data
+
+fetchincidents() uses the python urllib.request library to grab the pdf from the given url. 
+
+You can use the code below to grab the daily activity web page.
+~~~
+url = ("http://normanpd.normanok.gov/filebrowser_download/"
+       "657/2019-01-24%20Daily%20Arrest%20Summary.pdf")
+
+data = urllib.request.urlopen(url).read()
+~~~
+
+The data downloaded from the pdf is saved into a temporary file in any directory. This file should be available to read for the next method.
+
+#### Extract Data
+
+The function extractincidents() takes no parameters and it reads data from the above saved fils and extracts the arrests. The each arrest includes a Arrest Date/Time, Case Number, Arrest Location, Offense, Arrestee, Arrestee Birthday, Arrestee Address, City, State, Zip Code, Status and Officer. A city, state, and zip code will typical be available if the arrested person(s) is not homeless or transient. This data is hidden inside of a PDF file.
+
+To extract the data from the pdf files, use the PyPdf2.PdfFileReader class. It will allow you to extract pages and pdf file and search for the rows. Extract each row and add it to a list.
+
+Here is an example python script that takes data from a bytes object that contained pdf data, writes it to a temporary file, and reads it using the PyPdf2 module.
+
+~~~
+import tempfile
+fp = tempfile.TemporaryFile()
+
+# Write the pdf data to a temp file
+fp.write(data.read())
+
+# Set the curser of the file back to the begining
+fp.seek(0)
+
+# Read the PDF
+pdfReader = PdfFileReader(fp)
+pdfReader.getNumPages()
+
+# Get the first page
+page1 = pdfReader.getPage(0).extractText()
+~~~
+
+This function can return a list of rows so another function can easily insert the data into a database. In this prooject we are only considering the first page of any pdf.
+
+#### Create Database
+
+The createdb() function creates an SQLite database file named normanpd.db and inserts a table with the schema below.
+
+~~~
+CREATE TABLE arrests (
+    arrest_time TEXT,
+    case_number TEXT,
+    arrest_location TEXT,
+    offense TEXT,
+    arrestee_name TEXT,
+    arrestee_birthday TEXT,
+    arrestee_address TEXT,
+    status TEXT,
+    officer TEXT
+);
+~~~
+
+Note, all the columns correspond directly to the columns in the arrest pdfs. The arrest address contains information from the arrestee address, city, state, and zip code. Notice some “cells” have information on multiple lines, your code should take care of this.
+
+#### Insert Data
+
+The function populatedb(db, incidents) function takes the rows created in the extractincidents() function and adds it to the normanpd.db database. Again, the signature of this function can be changed as needed.
+
+#### Status Print
+
+The status() function prints to standard out, a random row from the database. Each field of the row should be separated by the thorn character (þ).
+
+~~~
+2/16/2019 10:49þ2019-00013113þ36TH AVE NW / QUAIL DRþDRIVING WITH LIC. CANCELED/SUSPENDED/REVOKE D
+ - DUSþCHRISTINA JENISE WARDENþ6/20/1976þ908 E COMANCHE ST Norman OK 73071þFDBDC (Jail)þ1527 - Rog
+ers;
+~~~
