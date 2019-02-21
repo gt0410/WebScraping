@@ -35,21 +35,21 @@ The above packages need not be installed in the pip environment you are working 
 
 The structure of the directory of this project is as given below.
 
-cs5293p19-project0/
-├── COLLABORATORS
-├── LICENSE
-├── Pipfile
-├── Pipfile.lock
-├── README.md
-├── project0
-│   ├── __init__.py
-│   └── main.py
-├── docs
-├── setup.cfg
-├── setup.py
-└── tests
-    ├── test_download.py
-    └── test_fields.py
+cs5293p19-project0/ \
+├── COLLABORATORS \
+├── LICENSE \
+├── Pipfile \
+├── Pipfile.lock \
+├── README.md \
+├── project0 \
+│   ├── __init__.py \
+│   └── main.py \
+├── docs \ 
+├── setup.cfg \
+├── setup.py \
+└── tests \
+    ├── test_download.py \
+    └── test_fields.py \
     └── ... 
 
 The structure is received initially from the repository created in the git. This repository can be brought into Ubuntu by cloning that repository. This can be done by using the following code
@@ -158,3 +158,18 @@ The status() function prints to standard out, a random row from the database. Ea
  - DUSþCHRISTINA JENISE WARDENþ6/20/1976þ908 E COMANCHE ST Norman OK 73071þFDBDC (Jail)þ1527 - Rog
 ers;
 ~~~
+
+## Running the tests
+
+The test files test the different features of the code. This will allow us to test if the code is working as expected. There are several testing frameworks for python, for this project use the
+py.test framework. For questions use the message board and see the pytest
+documentation for more examples http://doc.pytest.org/en/latest/assert.html .
+This tutorial give the best discussion of how to write tests
+https://semaphoreci.com/community/tutorials/testing-python-applications-withpytest.
+
+Install the pytest in your current pipfile. You can install it using the command
+pipenv install pytest. To run test, you can use the command pipenv run
+python -m pytest. This will run pytest using the installed version of python.
+Alternatively, you can use the command pipenv run python setup.py test.
+
+
