@@ -4,11 +4,11 @@
 
 In this project we are trying to download the arrests pdf from the [norman police website](http://normanpd.normanok.gov/content/daily-activity) using the url. The website consists of Public Records of Daily Incident Summary, Daily Case Summary and Daily Arrests Summary. In this project we will take into consideration only arrests summary. The first page of the pdf is read and saved in to db. Using text mining techniques it is ensured that proper field in the pdf are saved into relevant fields in db. This project is done with the use of Python and Linux command line tools. 
 
-##Getting Started
+## Getting Started
 
 The following instructions will help you to run the project.
 
-###Prerequisites
+### Prerequisites
 
 The project is done in python 3.7.2 version. Any version of python-3 will be sufficient to run the code. Also pip environment should be installed. Pyenv and pipenv can be created by using the folowong code in the project. Also a account in [github](https://github.com/) is necessary.
 '''
@@ -16,7 +16,7 @@ pyenv install python 3.7.2
 pipenv --3.7.2
 '''
 
-###Installing
+### Installing
 
 After setting up the python environment and pip environment the following packages ehich are used in the code need to be installed.
 
@@ -29,9 +29,9 @@ pipenv install sqlite3
 The above packages need not be installed in the pip environment you are working but should be available to import.
 
 
-##Project Description
+## Project Description
 
-###Directory Structure
+### Directory Structure
 
 The structure of the directory of this project is as given below.
 
