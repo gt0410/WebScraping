@@ -194,4 +194,3 @@ In this test we are checking if the extracted fields are saved exactly as we nee
 
 In this test case we are checkin if the status() function is returning string data type or not.
 
-
