@@ -53,6 +53,7 @@ def extractincidents():
 def createdb():
     conn = sqlite3.connect('normanpd.db')
     c = conn.cursor()
+    c.execute("DROP TABLE IF EXISTS arrests")
     c.execute('CREATE TABLE IF NOT EXISTS arrests (arrest_time TEXT, \
     case_number TEXT, \
     arrest_location TEXT, \

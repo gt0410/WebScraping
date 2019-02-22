@@ -194,3 +194,25 @@ In this test we are checking if the extracted fields are saved exactly as we nee
 
 In this test case we are checkin if the status() function is returning string data type or not.
 
+
+### Inspirations
+
+https://oudalab.github.io/textanalytics/projects/project0
+https://pythonspot.com/extract-links-from-webpage-beautifulsoup/ , helped me in unserstanding about working of Buet
+iful soup package.
+
+https://www.youtube.com/watch?v=mKxFfjNyj3c, This video helped me in understanding the web scraping.
+
+https://docs.python.org/3/howto/regex.html#splitting-strings, This is the Regular Expression pyhton documentation. 
+This document helped me in understanding different functions of re and also the substitute (sub) is used in the cod
+e.
+
+https://www.youtube.com/watch?v=o-vsdfCBpsU, This video helped me Understanding creating table in SQLite with Python.
+
+### People Contacted
+
+Dr. Christan Grant , cgrant@ou.edu, Professor,  Discussed about what should be included in the test cases. Also took help to solve the Pipfile locking issues.
+
+Subba Raju Sagi, subbaraju.v@ou.edu, Co- Student, Discussed about splitting of data into lists.
+
+Sai Teja Kanneganti, kannegantisaiteja@ou.edu, Co- student, Discussed about writing test cases.
