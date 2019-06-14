@@ -197,9 +197,9 @@ In this test case we are checkin if the status() function is returning string da
 
 ### Inspirations
 
-https://oudalab.github.io/textanalytics/projects/project0
-https://pythonspot.com/extract-links-from-webpage-beautifulsoup/ , helped me in unserstanding about working of Buet
-iful soup package.
+https://oudalab.github.io/textanalytics/projects/project0, 
+
+https://pythonspot.com/extract-links-from-webpage-beautifulsoup/ , helped me in unserstanding about working of beattiful soup package.
 
 https://www.youtube.com/watch?v=mKxFfjNyj3c, This video helped me in understanding the web scraping.
 
