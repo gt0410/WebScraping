@@ -1,7 +1,5 @@
 # Gowtham Teja Kanneganti
 
-## CS 5293, Spring 2019 Project 0
-
 In this project we are trying to download the arrests pdf from the [norman police website](http://normanpd.normanok.gov/content/daily-activity) using the url. The website consists of Public Records of Daily Incident Summary, Daily Case Summary and Daily Arrests Summary. In this project we will take into consideration only arrests summary. The first page of the pdf is read and saved in to db. Using text mining techniques it is ensured that proper field in the pdf are saved into relevant fields in db. This project is done with the use of Python and Linux command line tools. 
 
 ## Getting Started
